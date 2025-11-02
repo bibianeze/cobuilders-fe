@@ -62,7 +62,7 @@ function App() {
               <WhyChoose />
               <Faq />
               <OurCustomers />
-              <Footer />
+    
             </>
           }
         />
