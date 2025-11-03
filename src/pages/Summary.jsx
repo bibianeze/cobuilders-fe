@@ -103,18 +103,37 @@ const Summary = () => {
           </div>
 
           {/* Service Details */}
-          <div>
-            <h3 className="text-[#969696] text-sm">Service Task</h3>
-            <p className="capitalize font-medium">{service.title || "—"}</p>
+<div>
+  <h3 className="text-[#969696] text-sm">Service Task</h3>
+  <p className="capitalize font-medium">{service.title || "—"}</p>
 
-            {service.includes && service.includes.length > 0 && (
-              <ul className="list-disc list-inside text-gray-700 mt-2 text-sm">
-                {service.includes.map((item, index) => (
-                  <li key={index}>{item}</li>
-                ))}
-              </ul>
-            )}
-          </div>
+  {service.includes && service.includes.length > 0 && (
+    <ul className="list-disc list-inside text-gray-700 mt-2 text-sm">
+      {service.includes.map((item, index) => (
+        <li key={index}>{item}</li>
+      ))}
+    </ul>
+  )}
+</div>
+
+{/* Frequency Details */}
+<div>
+  <h3 className="text-[#969696] text-sm">Frequency</h3>
+  <p className="capitalize font-medium">
+    {frequency
+      ? frequency === "one-time"
+        ? "One-time"
+        : frequency === "weekly"
+        ? "Weekly"
+        : frequency === "two_weeks"
+        ? "Every Two Weeks"
+        : frequency === "four_weeks"
+        ? "Every Four Weeks"
+        : frequency
+      : "—"}
+  </p>
+</div>
+
         </div>
 
         {/* Space Summary */}
@@ -135,7 +154,7 @@ const Summary = () => {
         {/* Buttons */}
         <div className="flex flex-col md:flex-row justify-between gap-4">
           <button
-            onClick={() => navigate("/booking/service")}
+            onClick={() => navigate("/booking/services")}
             className="px-4 py-2 border border-gray-300 rounded-md w-full hover:bg-gray-100 transition-all"
             disabled={loading}
           >
