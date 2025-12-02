@@ -128,7 +128,7 @@ const Appointments = () => {
                       {order.status?.toLowerCase() !== "done" && (
                         <button
                           onClick={() => handleUpdateStatus(order._id)}
-                          className="px-3 py-1 bg-green-500 text-white rounded-md hover:bg-green-600 transition-all text-sm"
+                          className="px-3 py-1 bg-blue-700 text-white rounded-md hover:bg-green-600 transition-all text-sm"
                         >
                           Mark as Done
                         </button>
