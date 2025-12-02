@@ -8,7 +8,7 @@ const api = axios.create({
   },
 });
 
-// ✅ Automatically attach token from localStorage (matches AuthContext)
+// Automatically attach token from localStorage (matches AuthContext)
 api.interceptors.request.use(
   (config) => {
     try {
@@ -27,7 +27,7 @@ api.interceptors.request.use(
   (error) => Promise.reject(error)
 );
 
-// ✅ Optional: Auto-logout if unauthorized
+//  Auto-logout if unauthorized
 api.interceptors.response.use(
   (response) => response,
   (error) => {

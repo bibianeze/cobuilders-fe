@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import { Menu, Bell, Search, X } from "lucide-react";
 import { useAuth } from "../../context/AuthContext";
-import { useDashboard } from "../../context/DashboardContext"; // ✅ import
+import { useDashboard } from "../../context/DashboardContext"; //  import
 
 const DashboardNavbar = ({ setMobileOpen }) => {
   const { user } = useAuth();
-  const { searchTerm, setSearchTerm } = useDashboard(); // ✅ shared search term
+  const { searchTerm, setSearchTerm } = useDashboard(); // shared search term
   const [showSearch, setShowSearch] = useState(false);
 
   return (
@@ -28,7 +28,7 @@ const DashboardNavbar = ({ setMobileOpen }) => {
           type="text"
           placeholder="Search appointments..."
           value={searchTerm}
-          onChange={(e) => setSearchTerm(e.target.value)} // ✅ shared search state
+          onChange={(e) => setSearchTerm(e.target.value)} //  shared search state
           className="bg-transparent outline-none ml-2 w-full text-sm text-gray-700"
         />
       </div>

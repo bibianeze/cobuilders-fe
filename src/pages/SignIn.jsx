@@ -33,7 +33,7 @@ const SignIn = () => {
     setLoading(true);
 
     try {
-      // ✅ Send login request to backend
+      //  Send login request to backend
       const response = await fetch(`${import.meta.env.VITE_API_URL}/auth/login`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -46,7 +46,7 @@ const SignIn = () => {
         throw new Error(data.message || "Login failed");
       }
 
-      // ✅ Save user globally
+      // Save user globally
       setUser({
         email: data.user.email,
         token: data.token,

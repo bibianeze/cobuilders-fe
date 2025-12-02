@@ -75,7 +75,7 @@ const BookingPage = () => {
     return Object.keys(e).length === 0;
   };
 
-  // ✅ Handle Next
+  // Handle Next
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!validate()) return;
@@ -93,11 +93,11 @@ const BookingPage = () => {
 
     setLoading(true);
 
-    // ✅ Save to context (no API call yet)
+    // Save to context (no API call yet)
     setPersonal({ ...personal });
     setSpaces({ ...spaces });
 
-    // ✅ Move to the next page (Service selection)
+    //  Move to the next page (Service selection)
     setTimeout(() => {
       navigate("/booking/services");
       setLoading(false);

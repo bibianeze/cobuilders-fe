@@ -35,13 +35,13 @@ export const BookingProvider = ({ children }) => {
   const [orders, setOrders] = useState([]);
   const [loading, setLoading] = useState(false);
 
-  // ✅ Persist booking info while user is active
+  // Persist booking info while user is active
   useEffect(() => localStorage.setItem("personalInfo", JSON.stringify(personal)), [personal]);
   useEffect(() => localStorage.setItem("spacesInfo", JSON.stringify(spaces)), [spaces]);
   useEffect(() => localStorage.setItem("serviceInfo", JSON.stringify(service)), [service]);
   useEffect(() => localStorage.setItem("frequencyInfo", frequency), [frequency]);
 
-  // ✅ Create a booking
+  // Create a booking
   const createBooking = async () => {
     if (!user?.token) {
       alert("You must be logged in to book a service.");
@@ -75,7 +75,7 @@ export const BookingProvider = ({ children }) => {
     }
   };
 
-  // ✅ Fetch user bookings
+  // Fetch user bookings
   const fetchBookings = async () => {
     try {
       setLoading(true);
@@ -89,7 +89,7 @@ export const BookingProvider = ({ children }) => {
     }
   };
 
-  // ✅ Update booking status
+  // Update booking status
   const updateBookingStatus = async (id, status) => {
     try {
       const res = await api.put(`/bookings/${id}`, { status });
@@ -103,7 +103,7 @@ export const BookingProvider = ({ children }) => {
     }
   };
 
-  // ✅ Cancel booking
+  //  Cancel booking
   const cancelBooking = async (id) => {
     try {
       await api.delete(`/bookings/${id}`);
@@ -113,7 +113,7 @@ export const BookingProvider = ({ children }) => {
     }
   };
 
-  // ✅ Clear all booking info after creating a booking
+  //  Clear all booking info after creating a booking
   const clearBooking = () => {
     setPersonal({ firstName: "", lastName: "", phone: "", email: "" });
     setSpaces({ bathroom: 1, bedroom: 1 });

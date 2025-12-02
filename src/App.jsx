@@ -26,7 +26,7 @@ import ResetPassword from "./pages/ResetPasssword";
 function App() {
   const location = useLocation();
 
-  // ✅ Updated hidden navbar/footer routes
+  // Updated hidden navbar/footer routes
   const hideNavbarAndFooter = [
     "/bookings",
     "/booking/services",
@@ -38,18 +38,18 @@ function App() {
     "/reset-password/:token"
   ];
 
-  // ✅ Also hide for all dashboard sub-routes dynamically
+  //  Also hide for all dashboard sub-routes dynamically
     const isResetPassword = location.pathname.startsWith("/reset-password");
   const isDashboard = location.pathname.startsWith("/dashboard");
   const shouldHideLayout = hideNavbarAndFooter.includes(location.pathname) || isDashboard || isResetPassword ;
 
   return (
     <>
-      {/* ✅ Only show Navbar if not hidden */}
+      {/* Only show Navbar if not hidden */}
       {!shouldHideLayout && <Navbar />}
 
       <Routes>
-        {/* ✅ Home Page */}
+        {/*  Home Page */}
         <Route
           path="/"
           element={
@@ -67,26 +67,26 @@ function App() {
           }
         />
 
-        {/* ✅ Booking Flow */}
+        {/*  Booking Flow */}
         <Route path="/bookings" element={<BookingPage />} />
         <Route path="/booking/services" element={<ServiceSelection />} />
         <Route path="/booking/summary" element={<Summary />} />
         <Route path="/booking/payment" element={<Payment />} />
 
-        {/* ✅ Auth Pages */}
+        {/*  Auth Pages */}
         <Route path="/signin" element={<SignIn />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/forgot-password" element={<ForgotPassword />} />
          <Route path="/reset-password/:token" element={<ResetPassword />} />
 
-        {/* ✅ Dashboard Section (with nested routes) */}
+        {/* Dashboard Section (with nested routes) */}
         <Route path="/dashboard/*" element={<Dashboard />}>
           <Route path="bookings" element={<Bookings />} />
           <Route path="appointments" element={<Appointments />} />
         </Route>
       </Routes>
 
-      {/* ✅ Footer appears only on normal pages */}
+      {/* Footer appears only on normal pages */}
       {!shouldHideLayout && <Footer />}
     </>
   );

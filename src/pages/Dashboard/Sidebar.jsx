@@ -3,18 +3,18 @@ import { NavLink, useNavigate } from "react-router-dom";
 import { Calendar, ClipboardList, LogOut } from "lucide-react";
 import clsx from "clsx";
 import broomicon from "../../assets/game-icons_broom.png"; 
-import { useAuth } from "../../context/AuthContext"; // ✅ import auth context
+import { useAuth } from "../../context/AuthContext"; //  import auth context
 
 const Sidebar = ({ mobileOpen, setMobileOpen }) => {
   const navigate = useNavigate();
-  const { setUser } = useAuth(); // ✅ get setUser from context
+  const { setUser } = useAuth(); //  get setUser from context
 
   const navLinks = [
     { name: "Bookings", path: "/dashboard/bookings", icon: Calendar },
     { name: "Appointments", path: "/dashboard/appointments", icon: ClipboardList },
   ];
 
-  // ✅ handle logout
+  //  handle logout
   const handleLogout = () => {
     // setUser(null); // clear user from context
     // localStorage.removeItem("cobuilders_user"); // clear from localStorage
@@ -72,7 +72,7 @@ const Sidebar = ({ mobileOpen, setMobileOpen }) => {
 
         {/* Logout Button */}
         <button
-          onClick={handleLogout} // ✅ updated
+          onClick={handleLogout} //  updated
           className="flex items-center gap-3 px-4 py-3 text-red-600 hover:bg-red-50 border-t"
         >
           <LogOut size={18} />

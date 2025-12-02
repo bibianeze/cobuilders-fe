@@ -2,12 +2,12 @@ import React, { useEffect } from "react";
 import emptyImage from "../../assets/empty.png";
 import { useNavigate } from "react-router-dom";
 import { useBooking } from "../../context/BookingContext";
-import { useDashboard } from "../../context/DashboardContext"; // ✅ Import the shared context
+import { useDashboard } from "../../context/DashboardContext"; // Import the shared context
 
 const Appointments = () => {
   const navigate = useNavigate();
   const { orders, loading, fetchBookings, updateBookingStatus } = useBooking();
-  const { searchTerm } = useDashboard(); // ✅ Get the current search term
+  const { searchTerm } = useDashboard(); // Get the current search term
 
   // Fetch bookings when component mounts
   useEffect(() => {
@@ -32,7 +32,7 @@ const Appointments = () => {
     );
   };
 
-  // ✅ Filter appointments by search input
+  //  Filter appointments by search input
   const filteredOrders = orders.filter((order) => {
     const term = searchTerm.toLowerCase();
     return (

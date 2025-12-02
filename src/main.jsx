@@ -4,9 +4,9 @@ import './index.css';
 import App from './App.jsx';
 import { BrowserRouter } from "react-router-dom";
 import { BookingProvider } from './context/BookingContext.jsx';
-import { AuthProvider } from './context/AuthContext.jsx'; // ✅ Import AuthProvider
+import { AuthProvider } from './context/AuthContext.jsx'; //  Import AuthProvider
 
-// ✅ Wrap App with AuthProvider and BookingProvider
+// Wrap App with AuthProvider and BookingProvider
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <BrowserRouter>

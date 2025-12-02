@@ -20,7 +20,7 @@ const ForgotPassword = () => {
     try {
       setLoading(true);
 
-      // 🌐 Send request to backend
+      // Send request to backend
       const res = await axios.post(
         `${API_URL}/auth/forgot-password`,
         { email }

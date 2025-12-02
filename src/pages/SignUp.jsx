@@ -7,7 +7,7 @@ import authimg from "../assets/authimg.png";
 const SignUp = () => {
   const navigate = useNavigate();
 
-  // ✅ form states
+  //  form states
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
@@ -16,7 +16,7 @@ const SignUp = () => {
   const [serverError, setServerError] = useState("");
   const [successMsg, setSuccessMsg] = useState("");
 
-  // ✅ handle form submission
+  //  handle form submission
   const handleSubmit = async (e) => {
     e.preventDefault();
     setServerError("");
@@ -50,7 +50,7 @@ const SignUp = () => {
         throw new Error(data.message || "Signup failed. Please try again.");
       }
 
-      // ✅ Success message and redirect
+      //  Success message and redirect
       setSuccessMsg("Account created successfully! Redirecting to Sign In...");
       setTimeout(() => navigate("/signin"), 2000);
     } catch (error) {

@@ -1,6 +1,6 @@
 // src/context/AuthContext.jsx
 import React, { createContext, useContext, useState, useEffect } from "react";
-import { useBooking } from "./BookingContext"; // ✅ import booking context safely
+import { useBooking } from "./BookingContext"; // import booking context safely
 
 const AuthContext = createContext();
 
@@ -32,21 +32,9 @@ export const AuthProvider = ({ children }) => {
     setUser(null);
     localStorage.removeItem("cobuilders_user");
 
-    // ✅ Dynamically access booking context to avoid circular import issues
-  //   try {
-  //     // const { clearBooking, resetBooking } = useBooking();
-
-  //     // // Clear booking data from context
-  //     // if (resetBooking) resetBooking();
-  //     // else if (clearBooking) clearBooking();
-
- 
-  //   } catch (err) {
-  //     console.warn("Booking context not ready yet, skipping clear:", err);
-  //   }
   };
 
-  // ✅ Provide headers for authenticated requests
+  // Provide headers for authenticated requests
   const getAuthHeaders = () => {
     if (!user?.token) return { "Content-Type": "application/json" };
     return {

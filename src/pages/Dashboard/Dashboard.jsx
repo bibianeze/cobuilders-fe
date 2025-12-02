@@ -4,7 +4,7 @@ import Sidebar from "./Sidebar";
 import DashboardNavbar from "./DashboardNavbar";
 import Bookings from "./Bookings";
 import Appointments from "./Appointments";
-import { DashboardProvider } from "../../context/DashboardContext"; // ✅ import
+import { DashboardProvider } from "../../context/DashboardContext"; // import
 
 const Dashboard = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
